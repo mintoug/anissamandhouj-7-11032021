@@ -1,0 +1,149 @@
+body{
+    --blue: #007bff;
+    --green: #68D9A4;
+    --red: #ED6454;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20vw;
+    margin-top: 20px;
+   
+}
+.fa-search{
+    cursor:pointer;
+}
+#input-result{
+    display: inline-block;
+}
+.btn-ingredient, .button--blue{
+    background-color: var(--blue);
+}
+.button--green, .btn-appliance{
+    background-color: var(--green);
+}
+.button--red,.btn-ustensils{
+    background-color: var(--red);
+}
+
+.button--blue, .button--green, .button--red{
+    border-style: none;
+    height: 40px;
+}
+.button--blue::placeholder, .button--green::placeholder
+, .button--red::placeholder{
+    color: white;
+}
+
+.fa-chevron-down{
+    color: white;
+    cursor: pointer;
+}
+.fa-times-circle{
+    color: white;
+    cursor: pointer;
+   position: absolute;
+   top: -4px;
+   right: -4px;
+   padding-left: 3px;
+   
+}
+.text-input{
+    background-color: var(--blue);
+    visibility: hidden;
+    display: flex;
+    width: max-content;
+    padding:0 5px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    position: relative;
+}
+#input-result{
+    display: block;
+    width: max-content;
+    height: 30px;
+    background-color: var(--blue);
+    color: white;
+   font-size:18px;
+}
+.appliance-list>li{
+    position: relative;
+    background-color: var(--green);
+    color: white;
+    overflow: hidden;
+    width: 30vw;
+ }
+.ustensiles-list>li{
+    position: relative;
+    background-color: var(--red);
+    color: white;
+    width: 30vw;
+}
+.ingredients-list>li{
+    position: relative;
+    background-color: var(--blue);
+    color: white;
+    overflow: hidden;
+    width: 30vw;
+}
+
+.dropdown-header:focus-within{
+    width: 30vw;
+}
+.inputs{
+width: 100%;
+}
+.ustensiles-list,.ingredients-list,.appliance-list{ 
+    height: 200px;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-recipe{
+    min-height: 25rem;
+    min-width:20rem;
+    border: 1px solid #cfcbcb;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #E7E7E7;
+}
+.card-recipe-header, .card-recipe-content{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin: 0 10px;
+}
+.card-recipe-time{
+    display: flex;
+    flex-direction: row-reverse;
+    white-space: nowrap;
+}
+#card-recipe-list-ingredients{
+    list-style: none;
+    margin-left: -2.5rem;
+    text-overflow: hidden;
+    
+}
+.card-recipe-text{
+ text-align: justify;
+ overflow: hidden;
+ text-overflow: ellipsis; 
+ height: 12rem; 
+ width: 60%;
+}
+@media screen and (max-width:973px){
+    .drops-and-badgs{
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .logo{
+        width: 50vw;
+    }
+}
