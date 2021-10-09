@@ -1,23 +1,63 @@
 import { recipes } from "./recipes.js";
 
 /** declaratio of variables */
-let appliances   = document.querySelector('.appliance-list');
-let ustensils    = document.querySelector('.ustensiles-list');
-let Ingredients  = document.querySelector('.ingredients-list');
-let closeButton  = document.querySelector('.fa-times-circle');
-let textInput    = document.querySelector('.text-input')
-
-
-
-
+let appliances          = document.querySelector('.appliance-list');
+let ustensils           = document.querySelector('.ustensiles-list');
+let Ingredients         = document.querySelector('.ingredients-list');
+let closeButton         = document.querySelector('.fa-times-circle');
+let textInput           = document.querySelector('.text-input')
+let item                = document.querySelectorAll('.item')
+let chevron             = document.querySelectorAll('.fa-chevron-down')
+let inputResult         = document.querySelector('#input-result');
+const inputIngredient   = document.querySelector('.button--blue');
+const inputAppliance    =  document.querySelector('.button--green');
+const inputUsetensils   = document.querySelector('.button--red');
+const mainInput         = document.querySelector('.form-control');
+const menuD             = document.querySelector('.menu-d')
+let dropdownBody        = document.querySelectorAll('.dropdown-body')
 /** functions to show items of dropdown-menu */
 showAppliances(); 
 showUstensils();
 showIngredients();
+/**display the drop-down */
+
+chevron.addEventListener('click', () => {
+    dropdownBody.style.display = 'block'
+})
+
+/**THE span when input is written */
  
 closeButton.addEventListener('click', () =>{
     textInput.style.visibility="hidden"
 })
+/**in main search */
+mainInput.addEventListener('input', ()=>{
+    inputResult.innerHTML = mainInput.value;
+       textInput.style.visibility = "visible" })
+/*in ingredient*/
+inputIngredient.addEventListener('input', ()=>{
+        if(inputIngredient.value.length>2){
+            inputResult.innerHTML = inputIngredient.value;
+                   textInput.style.visibility = "visible";}})
+/*in appliance*/
+inputAppliance.addEventListener('input', ()=>{
+    if(inputAppliance.value.length>2){
+        inputResult.innerHTML = inputAppliance.value;
+        textInput.style.visibility = "visible";}})
+/*in usetensils*/
+ inputUsetensils.addEventListener('input', ()=>{
+    if(inputUsetensils.value.length>2){
+        //activate the span
+        inputResult.innerHTML = inputUsetensils.value;
+        textInput.style.visibility = "visible";}})
+     
+ /**when clicking on one item, show wthe span */
+
+item.forEach(elt => elt.addEventListener('click', () => {
+    inputResult.innerHTML = elt.value;
+        textInput.style.visibility = "visible";
+}))
+
 
 function showAppliances(){
     let applianceItems =[];
@@ -26,7 +66,10 @@ function showAppliances(){
     }
     let noDoubleAppliance = applianceItems.filter((item, index)=>applianceItems.indexOf(item)===index).sort()
     for (let k=0; k<noDoubleAppliance.length; k++){
-        appliances.innerHTML += `<li class="item">${noDoubleAppliance[k]}</li>`;
+        appliances.innerHTML += `<li class="item" value="${noDoubleAppliance[k]}" >${noDoubleAppliance[k]}</li>`;
+ 
+
+
     }
 }
 
@@ -36,7 +79,7 @@ function showUstensils() {
     ustensilsItem.push(recipes[i].ustensils[0].toLocaleLowerCase()) }
     let noDoubleUstensils = ustensilsItem.filter((item, index)=>ustensilsItem.indexOf(item)===index).sort()
     for (let k=0; k<noDoubleUstensils.length; k++){   
-    ustensils.innerHTML += `<li>${noDoubleUstensils[k]}</li>`;
+    ustensils.innerHTML += `<li class="item" value='${noDoubleUstensils[k]}'>${noDoubleUstensils[k]}</li>`;
 }}
 
 function showIngredients() {
@@ -51,11 +94,7 @@ function showIngredients() {
           // console.log(ingredientItem)
         let noDoubleIngredient = ingredientItem.filter((item, index)=>ingredientItem.indexOf(item)===index).sort();
         for (let i = 0; i < noDoubleIngredient.length; i++) {       
-             Ingredients.innerHTML += `<li>${noDoubleIngredient[i]}</li>`; 
+             Ingredients.innerHTML += `<li class="item" value='${noDoubleIngredient[i]}'>${noDoubleIngredient[i]}</li>`; 
         }
     
     }
-
-
-
- 

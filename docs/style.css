@@ -6,6 +6,10 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
+li{
+    list-style: none;
+    cursor: pointer;
+}
 .logo{
     display: block;
     margin-left: auto;
@@ -75,31 +79,39 @@ body{
     background-color: var(--green);
     color: white;
     overflow: hidden;
-    width: 30vw;
+    
  }
 .ustensiles-list>li{
     position: relative;
     background-color: var(--red);
     color: white;
-    width: 30vw;
+
 }
 .ingredients-list>li{
     position: relative;
     background-color: var(--blue);
     color: white;
-    overflow: hidden;
-    width: 30vw;
+}
+.drops-and-badgs{
+    z-index: 1000;
+}
+.dropdown-body{
+    margin-left: -40px;
+    display: none;
+}
+.menu-d{
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
 }
 
-.dropdown-header:focus-within{
-    width: 30vw;
-}
 .inputs{
 width: 100%;
 }
-.ustensiles-list,.ingredients-list,.appliance-list{ 
-    height: 200px;
-}
+/* .ustensiles-list,.ingredients-list,.appliance-list{ 
+    height:auto;
+} */
 .flex{
     display: flex;
     flex-wrap: wrap;

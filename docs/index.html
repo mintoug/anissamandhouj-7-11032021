@@ -29,12 +29,12 @@
 <div class="mb-4 mt-3 flex">
   <div class="drops-and-badgs">
       <div class="dropdown"> <div class="text-input"><span id= "input-result"></span><i class="far fa-times-circle"></i></div>
-          <button class="dropdown-header btn-ingredient btn dropdown-toggle mr-3" data-toggle="dropdown">
-              <input type="text" name="Ingredients" id="Ingredients" placeholder="Ingredients"  class="button button--blue inputs"/>
-              <span class="caret"></span>
-          </button>
+          <div class="dropdown-header btn-ingredient btn mr-3" data-toggle="dropdown">
+              <input type="text" name="Ingredients" id="Ingredients" placeholder="Ingredients"  class="button--blue inputs"/>
+              <i class="fa fa-chevron-down" ></i> 
+          </div>
           <div id="dropdown-body-Ingredients" class="dropdown-body dropdown-body--blue flex-column text-white">
-            <ul class="ingredients-list dropdown-menu "></ul> 
+            <ul class="ingredients-list menu-c menu-d"></ul> 
           </div>
       </div>
   </div>
@@ -42,13 +42,12 @@
   <!-- dropdown appliances -->
   <div class="drops-and-badgs">
       <div class="dropdown"><span id= "input-result"></span>
-          <div class="dropdown-header btn-appliance btn dropdown-toggle mr-3" data-toggle="dropdown"><span class="caret"></span>
-              <input type="text" name="Appareil" id="Appareil" placeholder="Appareils" 
-              class=" button--green inputs"/>
-                
+          <div class="dropdown-header btn-appliance btn  mr-3" data-toggle="dropdown">
+              <input type="text" name="Appareil" id="Appareil" placeholder="Appareils" class=" button--green inputs"/>
+              <i class="fa fa-chevron-down" ></i>    
           </div>
           <div id="dropdown-body-Appareil" class="dropdown-body dropdown-body--green flex-column text-white">
-            <ul class="appliance-list dropdown-menu"></ul>   
+            <ul class="appliance-list menu-c menu-d"></ul>   
             
               
           </div>
@@ -57,12 +56,12 @@
   <!-- dropdown ustensiles -->
   <div class="drops-and-badgs">
       <div class="dropdown"><span id= "input-result"></span>
-          <div class="dropdown-header btn-ustensils btn dropdown-toggle mr-3" data-toggle="dropdown"><span class="caret"></span>
-              <input type="text" name="Ustensiles" id="Ustensiles" placeholder="Ustensiles" class="button button--red inputs"/>
-              
+          <div class="dropdown-header btn-ustensils btn  mr-3" >
+              <input type="text" name="Ustensiles" id="Ustensiles" placeholder="Ustensiles" class="button--red inputs"/>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
           </div>
-          <div id="dropdown-body-Ustensiles" class="dropdown-body dropdown-body--red flex-column text-white">
-              <ul class="ustensiles-list dropdown-menu"></ul>
+          <div id="dropdown-body-Ustensiles" class="dropdown-body dropdown-body--red  ">
+              <ul class="ustensiles-list menu-c menu-d"></ul>
           </div>
       </div>
   </div>
