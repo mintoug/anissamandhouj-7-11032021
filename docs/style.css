@@ -21,6 +21,10 @@ li{
 .fa-search{
     cursor:pointer;
 }
+.drops-and-badgs{
+    max-width: 30vw;
+    z-index: 1000;
+}
 #input-result{
     display: inline-block;
 }
@@ -57,7 +61,7 @@ li{
    padding-left: 3px;
    
 }
-.text-input{
+.text-input-ingredients{
     background-color: var(--blue);
     visibility: hidden;
     display: flex;
@@ -65,9 +69,14 @@ li{
     padding:0 5px;
     margin-bottom: 3px;
     border-radius: 5px;
+    position: relative;}
+   
+.dropdown-body{
     position: relative;
+    left: -40px;
+    display: none;
 }
-#input-result{
+.ingredient{
     display: block;
     width: max-content;
     height: 30px;
@@ -75,40 +84,51 @@ li{
     color: white;
    font-size:18px;
 }
+.appliance{
+    display: block;
+    width: max-content;
+    height: 30px;
+    background-color: var(--green);
+    color: white;
+   font-size:18px;
+}
+.ustensils{
+    display: block;
+    width: max-content;
+    height: 30px;
+    background-color: var(--red);
+    color: white;
+   font-size:18px;
+}
+.appliance-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 .appliance-list>li{
     position: relative;
     background-color: var(--green);
     color: white;
     overflow: hidden;
-    
+ }
+ .ustensiles-list{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
  }
 .ustensiles-list>li{
     position: relative;
     background-color: var(--red);
     color: white;
 }
+.ingredients-list{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 80vw;
+}
 .ingredients-list>li{
     position: relative;
     background-color: var(--blue);
     color: white;
 }
-.drops-and-badgs{
-    z-index: 1000;
-}
-.dropdown-body{
-
-    margin-left: -40px;
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-}
-
-.menu-d{
-    z-index: 100;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-}
-
 .inputs{
 width: 100%;
 }
