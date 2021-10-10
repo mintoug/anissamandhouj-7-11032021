@@ -37,6 +37,7 @@ li{
 .button--blue, .button--green, .button--red{
     border-style: none;
     height: 40px;
+    
 }
 .button--blue::placeholder, .button--green::placeholder
 , .button--red::placeholder{
@@ -85,7 +86,6 @@ li{
     position: relative;
     background-color: var(--red);
     color: white;
-
 }
 .ingredients-list>li{
     position: relative;
@@ -96,9 +96,12 @@ li{
     z-index: 1000;
 }
 .dropdown-body{
+
     margin-left: -40px;
-    display: none;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
 }
+
 .menu-d{
     z-index: 100;
     display: grid;
