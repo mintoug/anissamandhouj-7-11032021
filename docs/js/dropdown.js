@@ -5,7 +5,10 @@ let appliances          = document.querySelector('.appliance-list');
 let ustensils           = document.querySelector('.ustensiles-list');
 let Ingredients         = document.querySelector('.ingredients-list');
 let closeButton         = document.querySelector('.fa-times-circle');
-let textInputIngredients= document.querySelector('.text-input-ingredients')
+let textInput           = document.querySelector('.text-input')
+let textInputIngr       = document.querySelector('.ingredient')
+let textInputAppl       = document.querySelector('.appliance')
+let textInputUstens     = document.querySelector('.ustensil')
 let item                = document.querySelectorAll('.item')
 let spanIngredient      = document.querySelector('.ingredient')
 let spanAppliance       = document.querySelector('.appliance')
@@ -13,7 +16,7 @@ let spanUstensils       = document.querySelector('.ustensils')
 let chevronIngredient   = document.querySelector('.chevron-ingredient')
 let chevronAppliance    = document.querySelector('.chevron-appliance')
 let chevronUstensil     = document.querySelector('.chevron-ustensil')
-let inputResult         = document.querySelector('#input-result');
+let inputResult         = document.querySelector('.input-result');
 const inputIngredient   = document.querySelector('.button--blue');
 const inputAppliance    =  document.querySelector('.button--green');
 const inputUsetensils   = document.querySelector('.button--red');
@@ -26,12 +29,12 @@ const bodyIngr          = document.getElementById('dropdown-body-Ingredients')
 showAppliances(); 
 showUstensils();
 showIngredients();
+
 /**display the drop-down */
 chevronIngredient.addEventListener('click', () => {
     if(bodyIngr.style.display = "none"){
 bodyIngr.style.display = "block";}
 })
-
 
 /**THE span when input is written */
  
@@ -41,24 +44,26 @@ closeButton.addEventListener('click', () => {
 /**in main search */
 mainInput.addEventListener('input', ()=>{
     inputResult.innerHTML = mainInput.value;
-       textInput.style.visibility = "visible" })
+        textInput.style.visibility = "visible" 
+})
 
 /**on click on th items */  
 item.forEach(elt => {     
-elt.addEventListener('click', () => { console.log(elt.value)
-    inputResult.innerHTML = elt.value;
-    console.log(elt.value)
+elt.addEventListener('click', () =>{
+    inputResult.innerHTML = elt.li[elt.selectedIndex].value;
+    console.log(inputResult.innerHTML)
+
         textInput.style.visibility = "visible" })})
 /*in ingredient*/
 inputIngredient.addEventListener('input', ()=>{
         if(inputIngredient.value.length>2){
             spanIngredient.innerHTML = inputIngredient.value;
-                   textInput.style.visibility = "visible";}})
+                   textInputIngr.style.visibility = "visible";}})
 /*in appliance*/
 inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
         spanAppliance.innerHTML = inputAppliance.value;
-        textInput.style.visibility = "visible";}})
+        textInputAppl.style.visibility = "visible";}})
 /*in usetensils*/
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
