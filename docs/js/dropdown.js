@@ -34,16 +34,13 @@ showIngredients();
 
 /**display the drop-down */
 chevronIngredient.addEventListener('click', () => {
-    if(bodyIngr.style.display = "none"){
-bodyIngr.style.display = "block";}
+   bodyIngr.classList.toggle('active')
 })
 chevronAppliance.addEventListener('click', () => {
-    if(bodyApp.style.display = "none"){
-bodyApp.style.display = "block";}
+   bodyApp.classList.toggle('active')
 })
 chevronUstensil.addEventListener('click', () => {
-    if(bodyUstens.style.display = "none"){
-bodyUstens.style.display = "block";}
+   bodyUstens.classList.toggle('active')
 })
 
 /**THE span when input is written */
@@ -57,13 +54,12 @@ mainInput.addEventListener('input', ()=>{
         textInput.style.visibility = "visible" 
 })
 
-/**on click on th items */  
-item.forEach(elt => {     
-elt.addEventListener('click', () =>{
-    inputResult.innerHTML = elt.options[elt.selectedIndex].value;
-    console.log(inputResult.innerHTML)
+// /**on click on th items */  
 
-        textInput.style.visibility = "visible" })})
+// item.forEach(elt => {     
+// elt.addEventListener('click', () =>{
+//     inputResult.innerHTML = elt.options[elt.selectedIndex].value;
+//             textInput.style.visibility = "visible" })})
 /*in ingredient*/
 inputIngredient.addEventListener('input', ()=>{
         if(inputIngredient.value.length>2){

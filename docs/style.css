@@ -79,10 +79,14 @@ li{
     position: relative;
 }
    
-.dropdown-body{
+.dropdown-body--blue, .dropdown-body--green, .dropdown-body--red{
     position: relative;
     left: -40px;
     display: none;
+ }
+ .dropdown-body.active, #dropdown-body-Ingredients.active,
+ #dropdown-body-Appareil.active, #dropdown-body-Ustensiles.active{
+     display: block;
  }
 .ingredient{
     display: block;
