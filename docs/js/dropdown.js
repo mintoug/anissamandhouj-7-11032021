@@ -25,6 +25,8 @@ const menuD             = document.querySelector('.menu-d')
 let dropdownBody        = document.querySelectorAll('.dropdown-body')
 let dropdownHead        = document.querySelectorAll('.dropdown-head')
 const bodyIngr          = document.getElementById('dropdown-body-Ingredients')
+const bodyApp          = document.getElementById('dropdown-body-Appareil')
+const bodyUstens         = document.getElementById('dropdown-body-Ustensiles')
 /** functions to show items of dropdown-menu */
 showAppliances(); 
 showUstensils();
@@ -34,6 +36,14 @@ showIngredients();
 chevronIngredient.addEventListener('click', () => {
     if(bodyIngr.style.display = "none"){
 bodyIngr.style.display = "block";}
+})
+chevronAppliance.addEventListener('click', () => {
+    if(bodyApp.style.display = "none"){
+bodyApp.style.display = "block";}
+})
+chevronUstensil.addEventListener('click', () => {
+    if(bodyUstens.style.display = "none"){
+bodyUstens.style.display = "block";}
 })
 
 /**THE span when input is written */
@@ -50,7 +60,7 @@ mainInput.addEventListener('input', ()=>{
 /**on click on th items */  
 item.forEach(elt => {     
 elt.addEventListener('click', () =>{
-    inputResult.innerHTML = elt.li[elt.selectedIndex].value;
+    inputResult.innerHTML = elt.options[elt.selectedIndex].value;
     console.log(inputResult.innerHTML)
 
         textInput.style.visibility = "visible" })})
