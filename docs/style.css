@@ -29,6 +29,9 @@ li{
     display: inline-block;
     padding-left: 10px;
 }
+.dropdown-body--blue{
+    background-color: var(--blue);
+}
 .btn-ingredient, .button--blue{
     background-color: var(--blue);
 }
@@ -54,12 +57,16 @@ li{
     cursor: pointer;
 }
 .fa-times-circle{
-    color: rgb(250, 240, 240);
+    color: ivory;
     cursor: pointer;
     position: absolute;
     top: 5px;
-    margin: 5px;
-}
+    right: 5px;
+    padding: 5px;
+    display: block;
+    width: 2px;
+    height: 3px;
+    }
 .ingredient{
     background-color: var(--blue);
 }

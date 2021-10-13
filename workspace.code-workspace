@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "les-petits-plats",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
+}
