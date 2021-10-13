@@ -21,8 +21,13 @@ li{
 .fa-search{
     cursor:pointer;
 }
-#input-result{
+.drops-and-badgs{
+    max-width: 30vw;
+    z-index: 1000;
+}
+.input-result{
     display: inline-block;
+    padding-left: 10px;
 }
 .btn-ingredient, .button--blue{
     background-color: var(--blue);
@@ -49,16 +54,23 @@ li{
     cursor: pointer;
 }
 .fa-times-circle{
-    color: white;
+    color: ivory;
     cursor: pointer;
-   position: absolute;
-   top: -4px;
-   right: -4px;
-   padding-left: 3px;
-   
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    
 }
-.text-input{
+.ingredient{
     background-color: var(--blue);
+}
+.appliance{
+    background-color: var(--green);
+}
+.ustensil{
+    background-color:var(--red) ;
+}
+.text-input {
     visibility: hidden;
     display: flex;
     width: max-content;
@@ -67,7 +79,17 @@ li{
     border-radius: 5px;
     position: relative;
 }
-#input-result{
+   
+.dropdown-body--blue, .dropdown-body--green, .dropdown-body--red{
+    position: relative;
+    left: -40px;
+    display: none;
+ }
+ .dropdown-body.active, #dropdown-body-Ingredients.active,
+ #dropdown-body-Appareil.active, #dropdown-body-Ustensiles.active{
+     display: block;
+ }
+.ingredient{
     display: block;
     width: max-content;
     height: 30px;
@@ -75,40 +97,51 @@ li{
     color: white;
    font-size:18px;
 }
+.appliance{
+    display: block;
+    width: max-content;
+    height: 30px;
+    background-color: var(--green);
+    color: white;
+   font-size:18px;
+}
+.ustensil{
+    display: block;
+    width: max-content;
+    height: 30px;
+    background-color: var(--red);
+    color: white;
+   font-size:18px;
+}
+.appliance-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 .appliance-list>li{
     position: relative;
     background-color: var(--green);
     color: white;
     overflow: hidden;
-    
+ }
+ .ustensiles-list{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
  }
 .ustensiles-list>li{
     position: relative;
     background-color: var(--red);
     color: white;
 }
+.ingredients-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 30vw;
+}
 .ingredients-list>li{
     position: relative;
     background-color: var(--blue);
     color: white;
 }
-.drops-and-badgs{
-    z-index: 1000;
-}
-.dropdown-body{
-
-    margin-left: -40px;
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-}
-
-.menu-d{
-    z-index: 100;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-}
-
 .inputs{
 width: 100%;
 }
@@ -142,7 +175,7 @@ width: 100%;
 #card-recipe-list-ingredients{
     list-style: none;
     margin-left: -2.5rem;
-    text-overflow: hidden;
+   
     
 }
 .card-recipe-text{

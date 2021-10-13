@@ -12,7 +12,7 @@ let textInputUstens     = document.querySelector('.ustensil')
 let item                = document.querySelectorAll('.item')
 let spanIngredient      = document.querySelector('.ingredient')
 let spanAppliance       = document.querySelector('.appliance')
-let spanUstensils       = document.querySelector('.ustensils')
+let spanUstensils       = document.querySelector('.ustensil')
 let chevronIngredient   = document.querySelector('.chevron-ingredient')
 let chevronAppliance    = document.querySelector('.chevron-appliance')
 let chevronUstensil     = document.querySelector('.chevron-ustensil')
@@ -75,7 +75,7 @@ inputAppliance.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
         //activate the span
         spanUstensils.innerHTML = inputUsetensils.value;
-        textInput.style.visibility = "visible";}})
+        textInputUstens.style.visibility = "visible";}})
      
 
 

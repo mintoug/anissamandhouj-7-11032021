@@ -5,7 +5,7 @@ import { recipes } from "./recipes.js";
 const inputIngredient   = document.querySelector('.button--blue');
 const inputAppliance    =  document.querySelector('.button--green');
 const inputUsetensils   = document.querySelector('.button--red');
-let inputResult         = document.querySelector('#input-result');
+let inputResult         = document.querySelector('.input-result');
 let mainInput           = document.querySelector('.form-control');
 let recipesList         = document.getElementById('recipes-list');
 let textInput           = document.querySelector('.text-input')
@@ -115,5 +115,3 @@ function filterRecipesUstensils(){
 
  }
  
-
-
