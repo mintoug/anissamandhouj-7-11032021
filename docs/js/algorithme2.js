@@ -35,7 +35,7 @@ inputIngredient.addEventListener('input', ()=>{
 
 inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){filterAppliances();
-        inputResult.innerHTML = inputAppliance.value;
+        //inputResult.innerHTML = inputAppliance.value;
         textInput.style.visibility = "visible";
         recipesList.innerHTML = appTags.map((recipe) => recipesListTemplate(recipe)).join("");
     }
