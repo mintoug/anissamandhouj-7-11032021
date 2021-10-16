@@ -9,6 +9,7 @@ body{
 li{
     list-style: none;
     cursor: pointer;
+    padding-left: 5px;
 }
 .logo{
     display: block;
@@ -54,12 +55,11 @@ li{
     cursor: pointer;
 }
 .fa-times-circle{
-    color: ivory;
+    color: rgb(250, 240, 240);
     cursor: pointer;
     position: absolute;
     top: 5px;
-    right: 5px;
-    
+    margin: 5px;
 }
 .ingredient{
     background-color: var(--blue);
@@ -81,13 +81,16 @@ li{
 }
    
 .dropdown-body--blue, .dropdown-body--green, .dropdown-body--red{
-    position: relative;
+    position: absolute;
     left: -40px;
     display: none;
- }
+    padding-bottom: 50px;
+}
+ 
  .dropdown-body.active, #dropdown-body-Ingredients.active,
  #dropdown-body-Appareil.active, #dropdown-body-Ustensiles.active{
      display: block;
+     
  }
 .ingredient{
     display: block;
@@ -116,16 +119,19 @@ li{
 .appliance-list{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 31.5vw;
 }
 .appliance-list>li{
     position: relative;
     background-color: var(--green);
     color: white;
-    overflow: hidden;
+   
  }
  .ustensiles-list{
      display: grid;
      grid-template-columns: 1fr 1fr;
+     width: 31.5vw;
+     
  }
 .ustensiles-list>li{
     position: relative;
@@ -134,7 +140,7 @@ li{
 }
 .ingredients-list{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     width: 30vw;
 }
 .ingredients-list>li{

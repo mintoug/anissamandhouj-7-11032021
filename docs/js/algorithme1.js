@@ -17,13 +17,14 @@ let filteredIngredients = [];
 /*show the inputs in the span of the top
 /*call to function displaying recipes*/
 
-mainInput.addEventListener('change', ()=>{
+mainInput.addEventListener('input', ()=>{
+    if(mainInput.value.length>2){
     inputResult.innerHTML = mainInput.value;
        textInput.style.visibility = "visible";
          filterRecipesIngredients(mainInput);
          recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");
          }
-)
+        })
 
 /**in ingrdient*/
 inputIngredient.addEventListener('input', ()=>{
