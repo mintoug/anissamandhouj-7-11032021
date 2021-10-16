@@ -119,7 +119,7 @@ li{
 .appliance-list{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 31.5vw;
+    width: 30vw;
 }
 .appliance-list>li{
     position: relative;
