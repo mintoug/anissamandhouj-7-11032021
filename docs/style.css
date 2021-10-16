@@ -87,7 +87,7 @@ li{
 }
    
 .dropdown-body--blue, .dropdown-body--green, .dropdown-body--red{
-    position: relative;
+    position: absolute;
     left: -40px;
     display: none;
  }

@@ -91,7 +91,7 @@ function showAppliances(){
     }
     let noDoubleAppliance = applianceItems.filter((item, index)=>applianceItems.indexOf(item)===index).sort()
     for (let k=0; k<noDoubleAppliance.length; k++){
-        appliances.innerHTML += `<li class="item">${noDoubleAppliance[k]}</li>`;
+        appliances.innerHTML += `<li class="item" data-value="${noDoubleAppliance[k]}">${noDoubleAppliance[k]}</li>`;
  
 
 
@@ -104,7 +104,7 @@ function showUstensils() {
     ustensilsItem.push(recipes[i].ustensils[0].toLocaleLowerCase()) }
     let noDoubleUstensils = ustensilsItem.filter((item, index)=>ustensilsItem.indexOf(item)===index).sort()
     for (let k=0; k<noDoubleUstensils.length; k++){   
-    ustensils.innerHTML += `<li class="item">${noDoubleUstensils[k]}</li>`;
+    ustensils.innerHTML += `<li class="item" data-value="${noDoubleUstensils[k]}">${noDoubleUstensils[k]}</li>`;
 }}
 
 function showIngredients() {
@@ -119,7 +119,7 @@ function showIngredients() {
           // console.log(ingredientItem)
         let noDoubleIngredient = ingredientItem.filter((item, index)=>ingredientItem.indexOf(item)===index).sort();
         for (let i = 0; i < noDoubleIngredient.length; i++) {       
-             Ingredients.innerHTML += `<div class="item">${noDoubleIngredient[i]}</div>`; 
+             Ingredients.innerHTML += `<li class="item" data-value="${noDoubleIngredient[i]}">${noDoubleIngredient[i]}</li>`; 
         }
     
     }

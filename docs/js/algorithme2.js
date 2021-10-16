@@ -10,13 +10,14 @@ let mainInput           = document.querySelector('.form-control')
 let inputResult         = document.querySelector('#input-result')
 let recipesList         = document.getElementById('recipes-list');
 let textInput           = document.querySelector('.text-input');
+let item = document.querySelectorAll('.item')
 let mainTags     = []
 let ingrTags     = []
 let appTags      = []
 let ustensilTags = []
 /**1/ filter by the main search */
 mainInput.addEventListener('input',()=>{ 
-    if(mainInput.value.length>2){mainFilter();
+    if(mainInput.value.length>2){mainFilter(mainInput);
     
        textInput.style.visibility = "visible";
        recipesList.innerHTML = mainTags.map((recipe) => recipesListTemplate(recipe)).join("");
@@ -24,10 +25,9 @@ mainInput.addEventListener('input',()=>{
  /**2/ filter in ingredient button */
 
 inputIngredient.addEventListener('input', ()=>{
-    if(inputIngredient.value.length>2){filterIngredients();
-       // inputResult.innerHTML = inputIngredient.value;
+    if(inputIngredient.value.length>2){mainFilter(inputIngredient);
         textInput.style.visibility = "visible";
-        recipesList.innerHTML = ingrTags.map((recipe) => recipesListTemplate(recipe)).join("");
+        recipesList.innerHTML = mainTags.map((recipe) => recipesListTemplate(recipe)).join("");
     }
 })
 
@@ -46,20 +46,41 @@ inputUsetensils.addEventListener('input', ()=>{
         recipesList.innerHTML = ustensilTags.map((recipe) => recipesListTemplate(recipe)).join("");
     }
 })
+/**5/ filter by selected item in the dropdown */
+/**for appliances dropdown */
+for (let elt  of item)  { let valueItem = elt.dataset.value;
+       elt.addEventListener('click', () => {
+        recipes.filter((recipe) => {if( recipe.appliance.toLowerCase() == valueItem) {appTags.push(recipe)} })
+       recipesList.innerHTML = appTags.map((recipe) => recipesListTemplate(recipe)).join("");}
+        
+)}
+/**for ustensils dropdown */
+for (let elt  of item)  { let valueItem = elt.dataset.value;
+    elt.addEventListener('click', () => {
+     recipes.filter((recipe) => {if( recipe.ustensils[0].toLowerCase() == valueItem) {ustensilTags.push(recipe)} })
+    recipesList.innerHTML = ustensilTags.map((recipe) => recipesListTemplate(recipe)).join("");}
+     
+)}
+/** for ingredients dropdown */
+for (let elt  of item)  { 
+    let valueItem = elt.dataset.value;
+    elt.addEventListener('click', () => {
+                                 recipes.filter((recipe)=>{  
+                                  let hasIngredient = recipe.ingredients.some( ingredient => ingredient['ingredient'].toLowerCase() == valueItem );
+          
+                         if  (hasIngredient)   {mainTags.push(recipe)}  })
+    recipesList.innerHTML = mainTags.map((recipe) => recipesListTemplate(recipe)).join("");}
+     
+)}
 
 /** functions */
-function mainFilter(){
-    recipes.filter((recipe)=>{if(recipe.appliance.toLowerCase() == mainInput.value.toLowerCase() || recipe.ingredients.includes(mainInput.value)
-        || recipe.ustensils.includes(mainInput.value)) {mainTags.push(recipe)}
+function mainFilter(mainInput){
+    recipes.filter((recipe)=>{  
+        let hasIngredient = recipe.ingredients.some( ingredient => ingredient['ingredient'].toLowerCase() == mainInput.value.toLowerCase() );
+        console.log(recipe.ingredients);
+        if(hasIngredient){mainTags.push(recipe)}
                           
-    console.log(mainTags)}) 
-}
-
-function filterIngredients(){
-    
-    recipes.filter( (recipe) => {if( recipe.ingredients == inputIngredient.value) {ingrTags.push(recipe)} }
-
-        )
+    }) 
 }
 
 
