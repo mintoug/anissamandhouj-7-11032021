@@ -8,7 +8,8 @@ const inputUsetensils   = document.querySelector('.button--red');
 let inputResult         = document.querySelector('.input-result');
 let mainInput           = document.querySelector('.form-control');
 let recipesList         = document.getElementById('recipes-list');
-let textInput           = document.querySelector('.text-input')
+let textInput           = document.querySelector('.text-input');
+let item                = document.querySelectorAll('.item'); 
 let filteredUstensil    = [];
 let filteredRecipes     =  [];
 let filteredIngredients = [];
@@ -17,6 +18,8 @@ let filteredIngredients = [];
 /*show the inputs in the span of the top
 /*call to function displaying recipes*/
 
+
+/** search ingredients in the main bar of serach */
 mainInput.addEventListener('input', ()=>{
     if(mainInput.value.length>2){
     inputResult.innerHTML = mainInput.value;
@@ -25,7 +28,29 @@ mainInput.addEventListener('input', ()=>{
          recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");
          }
         })
-
+        
+ /**search by clicking on the item in dropdown-body */
+ /*1. for ingredients*/
+ for (let elt  of item)  { let valueItem = elt.dataset;
+    elt.addEventListener('click', () => {
+        filterRecipesIngredients(valueItem);
+      recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");}
+     
+    )}
+/*2. for appliance*/
+for (let elt  of item)  { let valueItem = elt.dataset;
+    elt.addEventListener('click', () => {
+        filterRecipesAppliance(valueItem);
+      recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");}
+     
+    )}
+/*3. in ustensils */
+for (let elt  of item)  { let valueItem = elt.dataset;
+    elt.addEventListener('click', () => {
+        filterRecipesUstensils (valueItem);
+      recipesList.innerHTML = filteredUstensil.map((recipe) => recipesListTemplate(recipe)).join("");}
+     
+    )}
 /**in ingrdient*/
 inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
@@ -45,7 +70,8 @@ inputAppliance.addEventListener('input', ()=>{
             recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
         }
  });
-
+ 
+ 
 /*in usetensils*/
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
@@ -61,11 +87,11 @@ inputAppliance.addEventListener('input', ()=>{
 
 /**the functions to filter recipes  */
 /**filter the appliances */
- function filterRecipesAppliance(){
+ function filterRecipesAppliance(inputAppliance){
 
   for (let i=0 ; i<recipes.length ; i++){
       
-   if(recipes[i].appliance.toLowerCase() == inputResult.innerHTML.toLowerCase()){
+   if(recipes[i].appliance.toLowerCase() == inputAppliance.value.toLowerCase()){
        //test if recipes exists  yet 
        if(!filteredRecipes.includes(recipes[i])){
       filteredRecipes.push(recipes[i]);
@@ -77,14 +103,14 @@ inputAppliance.addEventListener('input', ()=>{
   
  /**filter ustensils */
  
-function filterRecipesUstensils(){
+function filterRecipesUstensils(inputUsetensils){
   let ustensilsTable = []
   for (let l=0;l<recipes.length;l++){
     ustensilsTable.push(recipes[l].ustensils)
   
   for(let i=0; i<ustensilsTable.length; i++){
          for (let elt in ustensilsTable[i]){
-             if(ustensilsTable[i][elt].toLowerCase() == inputResult.innerHTML.toLowerCase()){
+             if(ustensilsTable[i][elt].toLowerCase() == inputUsetensils.value.toLowerCase()){
       if (!filteredUstensil.includes(recipes[l])){
       filteredUstensil.push(recipes[l])}
      }
