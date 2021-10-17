@@ -55,7 +55,7 @@ for (let elt  of item)  { let valueItem = elt.dataset;
 inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
        inputResult.innerHTML = inputIngredient.value;
-         
+         textInput.style.visibility = "visible";
          filterRecipesIngredients(inputIngredient);
          recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join(""); 
           
@@ -66,7 +66,7 @@ inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
         inputResult.innerHTML = inputAppliance.value;
         filterRecipesAppliance(inputAppliance);
-        recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
+        ecipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
         }
  });
  
@@ -75,8 +75,10 @@ inputAppliance.addEventListener('input', ()=>{
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
         inputResult.innerHTML = inputUsetensils.value;
-        filterRecipesUstensils(inputUsetensils);
-        recipesList.innerHTML = filteredUstensil.map((recipe) => recipesListTemplate(recipe)).join("");
+         //function to filter
+         filterRecipesUstensils(inputUsetensils);
+         //show the recipes filtered
+         recipesList.innerHTML = filteredUstensil.map((recipe) => recipesListTemplate(recipe)).join("");
      }
  });
 
