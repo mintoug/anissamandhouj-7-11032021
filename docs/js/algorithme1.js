@@ -28,7 +28,7 @@ mainInput.addEventListener('input', ()=>{
          recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");
          }
         })
-        
+
  /**search by clicking on the item in dropdown-body */
  /*1. for ingredients*/
  for (let elt  of item)  { let valueItem = elt.dataset;
@@ -55,7 +55,7 @@ for (let elt  of item)  { let valueItem = elt.dataset;
 inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
        inputResult.innerHTML = inputIngredient.value;
-              textInput.style.visibility = "visible";
+         
          filterRecipesIngredients(inputIngredient);
          recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join(""); 
           
@@ -65,9 +65,8 @@ inputIngredient.addEventListener('input', ()=>{
 inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
         inputResult.innerHTML = inputAppliance.value;
-        textInput.style.visibility = "visible";
         filterRecipesAppliance(inputAppliance);
-            recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
+        recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
         }
  });
  
@@ -75,13 +74,9 @@ inputAppliance.addEventListener('input', ()=>{
 /*in usetensils*/
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
-        //activate the span
         inputResult.innerHTML = inputUsetensils.value;
-        textInput.style.visibility="visible";
-        //function to filter
-         filterRecipesUstensils(inputUsetensils);
-         //show the recipes filtered
-         recipesList.innerHTML = filteredUstensil.map((recipe) => recipesListTemplate(recipe)).join("");
+        filterRecipesUstensils(inputUsetensils);
+        recipesList.innerHTML = filteredUstensil.map((recipe) => recipesListTemplate(recipe)).join("");
      }
  });
 

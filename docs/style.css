@@ -55,21 +55,12 @@ li{
     cursor: pointer;
 }
 .fa-times-circle{
-    color: rgb(250, 240, 240);
+   color: rgb(250, 240, 240);
     cursor: pointer;
-    position: absolute;
-    top: 5px;
-    margin: 5px;
+   display: block;
+   
 }
-.ingredient{
-    background-color: var(--blue);
-}
-.appliance{
-    background-color: var(--green);
-}
-.ustensil{
-    background-color:var(--red) ;
-}
+
 .text-input {
     visibility: hidden;
     display: flex;
@@ -99,6 +90,7 @@ li{
     background-color: var(--blue);
     color: white;
    font-size:18px;
+   background-color: var(--blue);
 }
 .appliance{
     display: block;
@@ -107,6 +99,7 @@ li{
     background-color: var(--green);
     color: white;
    font-size:18px;
+   background-color: var(--green);
 }
 .ustensil{
     display: block;
