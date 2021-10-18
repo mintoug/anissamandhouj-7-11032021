@@ -6,9 +6,6 @@ let ustensils           = document.querySelector('.ustensiles-list');
 let Ingredients         = document.querySelector('.ingredients-list');
 let closeButton         = document.querySelector('.fa-times-circle');
 let textInput           = document.querySelector('.text-input')
-let textInputIngr       = document.querySelector('.ingredient')
-let textInputAppl       = document.querySelector('.appliance')
-let textInputUstens     = document.querySelector('.ustensil')
 let item                = document.querySelectorAll('.item')
 let spanIngredient      = document.querySelector('.ingredient')
 let spanAppliance       = document.querySelector('.appliance')
@@ -21,9 +18,6 @@ const inputIngredient   = document.querySelector('.button--blue');
 const inputAppliance    =  document.querySelector('.button--green');
 const inputUsetensils   = document.querySelector('.button--red');
 const mainInput         = document.querySelector('.form-control');
-const menuD             = document.querySelector('.menu-d')
-let dropdownBody        = document.querySelectorAll('.dropdown-body')
-let dropdownHead        = document.querySelectorAll('.dropdown-head')
 const bodyIngr          = document.getElementById('dropdown-body-Ingredients')
 const bodyApp          = document.getElementById('dropdown-body-Appareil')
 const bodyUstens         = document.getElementById('dropdown-body-Ustensiles')
@@ -69,18 +63,18 @@ function getContentSelected(e){
 inputIngredient.addEventListener('input', ()=>{
         if(inputIngredient.value.length>2){
             spanIngredient.innerHTML = inputIngredient.value;
-                   textInputIngr.style.visibility = "visible";}})
+            spanIngredient.style.visibility = "visible";}})
 /*in appliance*/
 inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
         spanAppliance.innerHTML = inputAppliance.value;
-        textInputAppl.style.visibility = "visible";}})
+        spanAppliance.style.visibility = "visible";}})
 /*in usetensils*/
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
         //activate the span
         spanUstensils.innerHTML = inputUsetensils.value;
-        textInput.style.visibility = "visible";}})
+        spanUstensils.style.visibility = "visible";}})
      
 
 
