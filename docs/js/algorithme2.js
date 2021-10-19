@@ -48,9 +48,9 @@ inputUsetensils.addEventListener('input', ()=>{
 })
 /**5/ filter by selected item in the dropdown */
 
-for (let elt  of item)  { let valueItem = elt.dataset.value;
+for (let elt  of item)  { let valueItem = elt.dataset.value.toLowerCase();
        elt.addEventListener('click', () => {
-       switch (elt.parentNode.classList  )  {
+       switch (elt.parentNode.className  )  {
        
        case  "appliance-list":
         recipes.filter((recipe) => { if ( recipe.appliance.toLowerCase() == valueItem) {appTags.push(recipe)} });

@@ -46,35 +46,30 @@ closeButton.addEventListener('click', () => {
 mainInput.addEventListener('input', ()=>{
     inputResult.innerHTML = mainInput.value;
         textInput.style.visibility = "visible" 
+    
 })
 
-// /**on click on th items */  
-
-item.forEach(elt => {elt.addEventListener('click', getContentSelected(elt))})
-
-
-function getContentSelected(e){
-    inputResult.innerHTML = e.text;
-        textInput.style.visibility = "visible"
- 
-}
 
 /*in ingredient*/
 inputIngredient.addEventListener('input', ()=>{
         if(inputIngredient.value.length>2){
             spanIngredient.innerHTML = inputIngredient.value;
-            spanIngredient.style.visibility = "visible";}})
+            spanIngredient.style.visibility = "visible";
+}})
 /*in appliance*/
 inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
         spanAppliance.innerHTML = inputAppliance.value;
-        spanAppliance.style.visibility = "visible";}})
+        spanAppliance.style.visibility = "visible";
+     
+}})
 /*in usetensils*/
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
         //activate the span
         spanUstensils.innerHTML = inputUsetensils.value;
-        spanUstensils.style.visibility = "visible";}})
+        spanUstensils.style.visibility = "visible";
+}})
      
 
 
