@@ -29,28 +29,7 @@ mainInput.addEventListener('input', ()=>{
          }
         })
 
- /**search by clicking on the item in dropdown-body */
- /*1. for ingredients*/
- for (let elt  of item)  { let valueItem = elt.dataset;
-    elt.addEventListener('click', () => {
-        filterRecipesIngredients(valueItem);
-      recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");}
-     
-    )}
-/*2. for appliance*/
-for (let elt  of item)  { let valueItem = elt.dataset;
-    elt.addEventListener('click', () => {
-        filterRecipesAppliance(valueItem);
-      recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");}
-     
-    )}
-/*3. in ustensils */
-for (let elt  of item)  { let valueItem = elt.dataset;
-    elt.addEventListener('click', () => {
-        filterRecipesUstensils (valueItem);
-      recipesList.innerHTML = filteredUstensil.map((recipe) => recipesListTemplate(recipe)).join("");}
-     
-    )}
+ 
 /**in ingrdient*/
 inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
@@ -139,3 +118,27 @@ function filterRecipesUstensils(inputUsetensils){
 
  }
  
+
+ /**search by clicking on the item in dropdown-body */
+ /** filter by selected item in the dropdown */
+
+for (let elt  of item)  { let valueItem = elt.dataset.value.toLowerCase();
+  elt.addEventListener('click', () => {
+  switch (elt.parentNode.className  )  {
+  
+  case  "appliance-list":
+   recipes.filter((recipe) => { if ( recipe.appliance.toLowerCase() == valueItem) {filteredRecipes.push(recipe)} });
+  recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
+   break;
+  case "ustensiles-list" :
+recipes.filter((recipe) => {if( recipe.ustensils[0].toLowerCase() == valueItem) {filteredUstensil.push(recipe)} });
+recipesList.innerHTML = filteredUstensil.map((recipe) => recipesListTemplate(recipe)).join("");
+   break;
+   case "ingredients-list":
+recipes.filter((recipe) => {  let hasIngredient = recipe.ingredients.some( ingredient => ingredient['ingredient'].toLowerCase() == valueItem );
+                           if  (hasIngredient)   {filteredIngredients.push(recipe)}  })
+recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");
+  break;
+  default:
+      console.log("rien à afficher") ;
+}})}
