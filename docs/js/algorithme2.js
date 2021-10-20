@@ -21,13 +21,23 @@ mainInput.addEventListener('input',()=>{
     
        textInput.style.visibility = "visible";
        recipesList.innerHTML = mainTags.map((recipe) => recipesListTemplate(recipe)).join("");
- }})
+       if (mainTags == ""){ let error = document.createElement('div');
+    error .textContent = " e « Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+    error.className ="error-message";
+    document.body.append(error)}
+ }}
+ 
+ )
  /**2/ filter in ingredient button */
 
 inputIngredient.addEventListener('input', ()=>{
     if(inputIngredient.value.length>2){mainFilter(inputIngredient);
         textInput.style.visibility = "visible";
         recipesList.innerHTML = mainTags.map((recipe) => recipesListTemplate(recipe)).join("");
+        if (mainTags == ""){ let error = document.createElement('div');
+    error .textContent = " e « Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+    error.className ="error-message";
+    document.body.append(error)}
     }
 })
 
@@ -37,6 +47,10 @@ inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){filterAppliances();
       
         recipesList.innerHTML = appTags.map((recipe) => recipesListTemplate(recipe)).join("");
+        if (appTags == ""){ let error = document.createElement('div');
+    error .textContent = " e « Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+    error.className ="error-message";
+    document.body.append(error)}
     }
 })
 /**4/ filter in ustensils button */
@@ -44,6 +58,10 @@ inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){filterUstensils();
        
         recipesList.innerHTML = ustensilTags.map((recipe) => recipesListTemplate(recipe)).join("");
+        if (ustensilTags == ""){ let error = document.createElement('div');
+    error .textContent = " e « Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+    error.className ="error-message";
+    document.body.append(error)}
     }
 })
 /**5/ filter by selected item in the dropdown */
