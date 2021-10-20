@@ -59,7 +59,7 @@ li{
     cursor: pointer;
     position: absolute;
     top: 5px;
-    margin: 5px;
+    margin: -10px;
 }
 .ingredient{
     background-color: var(--blue);
@@ -92,7 +92,7 @@ li{
      display: block;
      
  }
-.ingredient{
+ .ingredient{
     display: block;
     width: max-content;
     height: 30px;
@@ -119,14 +119,13 @@ li{
 .appliance-list{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 30vw;
+    width: 31.5vw;
 }
 .appliance-list>li{
     position: relative;
     background-color: var(--green);
     color: white;
-   
- }
+}
  .ustensiles-list{
      display: grid;
      grid-template-columns: 1fr 1fr;
@@ -141,7 +140,7 @@ li{
 .ingredients-list{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    width: 30vw;
+    width: 31.5vw;
 }
 .ingredients-list>li{
     position: relative;
