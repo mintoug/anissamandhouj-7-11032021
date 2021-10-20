@@ -151,7 +151,15 @@ width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
-
+.error-message{
+    background-color:rgba(186, 207, 219,.5);
+    color: var(--blue);
+    width: 80vw;
+    margin: 20px auto;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
 .card-recipe{
     min-height: 25rem;
     min-width:20rem;

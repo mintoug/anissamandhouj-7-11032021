@@ -10,6 +10,7 @@ let mainInput           = document.querySelector('.form-control');
 let recipesList         = document.getElementById('recipes-list');
 let textInput           = document.querySelector('.text-input');
 let item                = document.querySelectorAll('.item'); 
+const drops             = document.querySelector('.drops-and-badgs')
 let filteredUstensil    = [];
 let filteredRecipes     =  [];
 let filteredIngredients = [];
@@ -22,14 +23,15 @@ let filteredIngredients = [];
 /** search ingredients in the main bar of serach */
 mainInput.addEventListener('input', ()=>{
     if(mainInput.value.length>2){
-    inputResult.innerHTML = mainInput.value;
-       textInput.style.visibility = "visible";
-         filterRecipesIngredients(mainInput);
-         recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");
-         }
+                          inputResult.innerHTML = mainInput.value;
+                            textInput.style.visibility = "visible";
+                              filterRecipesIngredients(mainInput);
+                              recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");
+                              }
+
         })
 
- 
+       
 /**in ingrdient*/
 inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
@@ -37,16 +39,15 @@ inputIngredient.addEventListener('input', ()=>{
          textInput.style.visibility = "visible";
          filterRecipesIngredients(inputIngredient);
          recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join(""); 
-          
-    }
+        } 
 });
 /*in appliance*/
 inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
         inputResult.innerHTML = inputAppliance.value;
         filterRecipesAppliance(inputAppliance);
-        ecipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
-        }
+        recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
+        } 
  });
  
  
@@ -74,6 +75,10 @@ inputAppliance.addEventListener('input', ()=>{
        }
      }
     }
+    if (filteredRecipes == ""){ let error = document.createElement('div');
+    error .textContent = " e « Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+    error.className ="error-message";
+    document.body.append(error)}
     console.log(filteredRecipes); 
     }
   
@@ -93,7 +98,10 @@ function filterRecipesUstensils(inputUsetensils){
     
     }
     }
-    }
+    }if (filteredUstensil == ""){ let error = document.createElement('div');
+    error .textContent = " e « Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+    error.className ="error-message";
+    document.body.append(error)}
     console.log(filteredUstensil)
  } 
 
@@ -114,7 +122,11 @@ function filterRecipesUstensils(inputUsetensils){
           
     }
 }
-}console.log(filteredIngredients)
+}if (filteredIngredients == ""){ let error = document.createElement('div');
+error .textContent = " e « Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+error.className ="error-message";
+document.body.append(error)}
+console.log(filteredIngredients)
 
  }
  
