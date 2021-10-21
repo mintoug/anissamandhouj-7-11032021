@@ -63,7 +63,7 @@ li{
 
 .text-input {
     visibility: hidden;
-   
+    display: flex;
     width: max-content;
     padding:0 5px;
     margin-bottom: 3px;
@@ -152,11 +152,11 @@ width: 100%;
     flex-wrap: wrap;
 }
 .error-message{
-    background-color: rgba(165, 195, 247, 0.5);
+    background-color:rgba(186, 207, 219,.5);
     color: var(--blue);
     width: 80vw;
+    margin: 20px auto;
     height: 50px;
-    margin: 10px auto;
     padding-top: 10px;
     padding-left: 10px;
 }
