@@ -55,12 +55,21 @@ li{
     cursor: pointer;
 }
 .fa-times-circle{
-   color: rgb(250, 240, 240);
+    color: rgb(250, 240, 240);
     cursor: pointer;
-   display: block;
-   
+    position: absolute;
+    top: 5px;
+    margin: -10px;
 }
-
+.ingredient{
+    background-color: var(--blue);
+}
+.appliance{
+    background-color: var(--green);
+}
+.ustensil{
+    background-color:var(--red) ;
+}
 .text-input {
     visibility: hidden;
     display: flex;
@@ -83,14 +92,13 @@ li{
      display: block;
      
  }
-.ingredient{
+ .ingredient{
     display: block;
     width: max-content;
     height: 30px;
     background-color: var(--blue);
     color: white;
    font-size:18px;
-   background-color: var(--blue);
 }
 .appliance{
     display: block;
@@ -99,7 +107,6 @@ li{
     background-color: var(--green);
     color: white;
    font-size:18px;
-   background-color: var(--green);
 }
 .ustensil{
     display: block;
@@ -118,8 +125,7 @@ li{
     position: relative;
     background-color: var(--green);
     color: white;
-   
- }
+}
  .ustensiles-list{
      display: grid;
      grid-template-columns: 1fr 1fr;
@@ -134,7 +140,7 @@ li{
 .ingredients-list{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    width: 30vw;
+    width: 31.5vw;
 }
 .ingredients-list>li{
     position: relative;
@@ -151,15 +157,7 @@ width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
-.error-message{
-    background-color:rgba(186, 207, 219,.5);
-    color: var(--blue);
-    width: 80vw;
-    margin: 20px auto;
-    height: 50px;
-    padding-top: 10px;
-    padding-left: 10px;
-}
+
 .card-recipe{
     min-height: 25rem;
     min-width:20rem;
