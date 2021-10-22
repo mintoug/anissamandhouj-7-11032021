@@ -34,17 +34,27 @@ showUstensils();
 showIngredients();
 
 /**display the drop-down */
-chevronIngredient.addEventListener('click', () => {
-   bodyIngr.classList.toggle('active');
-   btnIngr.style.width = "28.5vw";
+chevronIngredient.addEventListener('click', function (){
+    if(bodyIngr.style.display =="block"){
+   bodyIngr.style.display="none";
+   btnIngr.style.width ="12vw";
+   }else{bodyIngr.style.display="block";
+         btnIngr.style.width ="30vw";}
+})         
+ 
+chevronAppliance.addEventListener('click', function () {
+    if(bodyApp.style.display =="block"){
+        bodyApp.style.display="none";
+        btnAppliance.style.width ="12vw";
+        }else{bodyApp.style.display="block";
+              btnAppliance.style.width ="30vw";}
 })
-chevronAppliance.addEventListener('click', () => {
-   bodyApp.classList.toggle('active');
-   btnAppliance.style.width ="28.5vw";
-})
-chevronUstensil.addEventListener('click', () => {
-   bodyUstens.classList.toggle('active');
-   btnUstensils.style.width ="28.5vw";
+chevronUstensil.addEventListener('click', function () {
+    if(bodyUstens.style.display =="block"){
+        bodyUstens.style.display="none";
+        btnUstensils.style.width ="12vw";
+        }else{bodyUstens.style.display="block";
+              btnUstensils.style.width ="30vw";}
 })
 
 /**close the span where input is written */

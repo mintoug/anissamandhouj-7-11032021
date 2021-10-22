@@ -77,12 +77,6 @@ li{
     display: none;
     padding-bottom: 50px;
 }
- 
- .dropdown-body.active, #dropdown-body-Ingredients.active,
- #dropdown-body-Appareil.active, #dropdown-body-Ustensiles.active{
-     display: block;
-     
- }
 .ingredient{
     display: block;
     width: max-content;
@@ -111,8 +105,13 @@ li{
 }
 .appliance-list{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 31.5vw;
+	grid-template-columns: 1fr 1fr;
+	width: 30vw;
+	background-color: var(--green);
+	position: relative;
+	left: 40px;
+	margin: 0;
+	padding: 10px;
 }
 .appliance-list>li{
     position: relative;
@@ -121,9 +120,14 @@ li{
    
  }
  .ustensiles-list{
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     width: 31.5vw;
+    display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 30vw;
+	background-color: var(--red);
+	position: relative;
+	left: 40px;
+	margin: 0;
+	padding: 10px;
      
  }
 .ustensiles-list>li{
@@ -133,8 +137,13 @@ li{
 }
 .ingredients-list{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    width: 30vw;
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 30vw;
+	background-color: var(--blue);
+	position: relative;
+	left: 40px;
+	margin: 0;
+	padding: 10px;
 }
 .ingredients-list>li{
     position: relative;
