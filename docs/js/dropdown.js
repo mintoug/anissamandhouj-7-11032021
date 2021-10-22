@@ -17,6 +17,9 @@ let inputResult         = document.querySelector('.input-result');
 const inputIngredient   = document.querySelector('.button--blue');
 const inputAppliance    =  document.querySelector('.button--green');
 const inputUsetensils   = document.querySelector('.button--red');
+const btnAppliance        = document.querySelector('.btn-appliance')
+const btnUstensil        = document.querySelector('.btn-ustensils')
+const btnIngredient        = document.querySelector('.btn-ingredient')
 const mainInput         = document.querySelector('.form-control');
 const bodyIngr          = document.getElementById('dropdown-body-Ingredients')
 const bodyApp          = document.getElementById('dropdown-body-Appareil')
@@ -28,13 +31,16 @@ showIngredients();
 
 /**display the drop-down */
 chevronIngredient.addEventListener('click', () => {
-   bodyIngr.classList.toggle('active')
+   bodyIngr.classList.toggle('active');
+   btnIngredient.style.width = "29vw";
 })
 chevronAppliance.addEventListener('click', () => {
-   bodyApp.classList.toggle('active')
+   bodyApp.classList.toggle('active');
+   btnAppliance.style.width ="29vw";
 })
 chevronUstensil.addEventListener('click', () => {
-   bodyUstens.classList.toggle('active')
+   bodyUstens.classList.toggle('active');
+   btnUstensil.style.width ="29vw";
 })
 
 /**THE span when input is written */
