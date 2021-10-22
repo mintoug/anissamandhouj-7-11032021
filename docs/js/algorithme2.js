@@ -7,7 +7,6 @@ const inputIngredient   = document.querySelector('.button--blue');
 const inputAppliance    =  document.querySelector('.button--green');
 const inputUsetensils   = document.querySelector('.button--red');
 let mainInput           = document.querySelector('.form-control')
-let inputResult         = document.querySelector('#input-result')
 let recipesList         = document.getElementById('recipes-list');
 let textInput           = document.querySelector('.text-input');
 let item                = document.querySelectorAll('.item')
@@ -89,9 +88,10 @@ for (let elt  of item)  {
         break;
         case "ingredients-list":
             recipes.filter((recipe) => {  let hasIngredient = recipe.ingredients.some( ingredient => ingredient['ingredient'].toLowerCase() == valueItem );
-            if  (hasIngredient)   { mainTags.push(recipe)}  })
-            recipesList.innerHTML = mainTags.map((recipe) => recipesListTemplate(recipe)).join("");
-       break;
+                       if  (hasIngredient) {ingrTags.push(recipe)}  })
+            recipesList.innerHTML = ingrTags.map((recipe) => recipesListTemplate(recipe)).join("");
+        break;
+      
        default:
            console.log("rien à afficher") ;
 }})}
