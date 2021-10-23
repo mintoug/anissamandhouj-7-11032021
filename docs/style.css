@@ -51,20 +51,25 @@ li{
     cursor: pointer;
 }
 .fa-times-circle{
-    color: rgb(250, 240, 240);
+    color :white;
     cursor: pointer;
     position: absolute;
-    top: 5px;
-    margin: -10px;
+    top: -5px;
+    right: -5px;
 }
 .ingredient{
     background-color: var(--blue);
+    margin-bottom: 2px;
 }
 .appliance{
     background-color: var(--green);
+    margin-bottom: 2px;
+    visibility: hidden;
 }
 .ustensil{
     background-color:var(--red) ;
+    margin-bottom: 2px;
+    visibility: hidden;
 }
 .text-input {
     visibility: hidden;
@@ -195,7 +200,7 @@ width: 100%;
 }
 .card-recipe-text{
  text-align: justify;
- overflow: hidden;
+ overflow: auto;
  text-overflow: ellipsis; 
  height: 12rem; 
  width: 60%;

@@ -35,7 +35,7 @@ chevronIngredient.addEventListener('click', function (){
         if(bodyIngr.style.display=="block"){
        bodyIngr.style.display="none";
        btnIngredient.style.width ="12vw";
-       }else{bodyIngr.style.display="block";
+       }else {bodyIngr.style.display="block";
              btnIngredient.style.width ="30vw";}
 })
 chevronAppliance.addEventListener('click', function () {
@@ -86,9 +86,7 @@ inputAppliance.addEventListener('input', ()=>{
         spanUstensils.innerHTML = inputUsetensils.value;
         spanUstensils.style.visibility = "visible";
 }})
-     
-
-
+   
 function showAppliances(){
     let applianceItems =[];
     for(let i = 0; i < recipes.length; i++){
@@ -97,10 +95,7 @@ function showAppliances(){
     let noDoubleAppliance = applianceItems.filter((item, index)=>applianceItems.indexOf(item)===index).sort()
     for (let k=0; k<noDoubleAppliance.length; k++){
         appliances.innerHTML += `<li class="item" data-value="${noDoubleAppliance[k]}">${noDoubleAppliance[k]}</li>`;
- 
-
-
-    }
+     }
 }
 
 function showUstensils() {
@@ -110,7 +105,8 @@ function showUstensils() {
     let noDoubleUstensils = ustensilsItem.filter((item, index)=>ustensilsItem.indexOf(item)===index).sort()
     for (let k=0; k<noDoubleUstensils.length; k++){   
     ustensils.innerHTML += `<li class="item" data-value="${noDoubleUstensils[k]}">${noDoubleUstensils[k]}</li>`;
-}}
+    }
+}
 
 function showIngredients() {
     let ingredientArray=[]; let ingredientItem=[];
@@ -126,5 +122,4 @@ function showIngredients() {
         for (let i = 0; i < noDoubleIngredient.length; i++) {       
              Ingredients.innerHTML += `<li class="item" data-value="${noDoubleIngredient[i]}">${noDoubleIngredient[i]}</li>`; 
         }
-    
-    }
+ }
