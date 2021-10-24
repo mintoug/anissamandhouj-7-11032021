@@ -28,7 +28,7 @@ mainInput.addEventListener ( 'input', () => {
                  recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");
           if ( filteredIngredients == "" ) {
                  let error = document.createElement('div');
-                 error .textContent = "« Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+                 error .textContent = "« Aucune recette ne correspond à votre critère… vous pouvez chercher « pommes », « poulet », etc."
                  recipesList.innerHTML = error.textContent;
                 }                       
          }
@@ -44,7 +44,7 @@ inputIngredient.addEventListener ('input', () => {
                 recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join(""); 
          if ( filteredIngredients == "" ) {
                 let error = document.createElement('div');
-                error .textContent = "« Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+                error .textContent = "« Aucune recette ne correspond à votre critère… vous pouvez chercher « pommes », « poulet », etc."
                 recipesList.innerHTML = error.textContent;
 
         } }
@@ -57,7 +57,7 @@ inputAppliance.addEventListener ( 'input', () => {
                 recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
         if ( filteredRecipes == "" ) {
                 let error = document.createElement('div');
-                error .textContent = "« Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+                error .textContent = "« Aucune recette ne correspond à votre critère… vous pouvez chercher « pommes », « poulet », etc."
                 recipesList.innerHTML = error.innerText;
     }
         } 
@@ -72,7 +72,7 @@ inputAppliance.addEventListener ( 'input', () => {
                 recipesList.innerHTML = filteredUstensil.map((recipe) => recipesListTemplate(recipe)).join("");
          if ( filteredUstensil == "" ) {
                 let error = document.createElement('div');
-                error.textContent = "« Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc."
+                error.textContent = "« Aucune recette ne correspond à votre critère… vous pouvez chercher « pommes », « poulet », etc."
                 recipesList.innerHTML = error.textContent;
      }
     }

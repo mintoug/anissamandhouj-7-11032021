@@ -58,7 +58,7 @@ li{
    color: rgb(250, 240, 240);
     cursor: pointer;
    display: block;
-   
+   margin-left: 10px;
 }
 
 .text-input {
@@ -128,8 +128,7 @@ li{
 	left: 40px;
 	margin: 0;
 	padding: 10px;
-     
- }
+}
 .ustensiles-list>li{
     position: relative;
     background-color: var(--red);
