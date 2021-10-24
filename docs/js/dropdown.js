@@ -1,12 +1,11 @@
 import { recipes } from "./recipes.js";
 
-/** declaratio of variables */
+/** declaration of variables */
 let appliances          = document.querySelector('.appliance-list');
 let ustensils           = document.querySelector('.ustensiles-list');
 let Ingredients         = document.querySelector('.ingredients-list');
 let closeButton         = document.querySelector('.fa-times-circle');
 let textInput           = document.querySelector('.text-input')
-let item                = document.querySelectorAll('.item')
 let spanIngredient      = document.querySelector('.ingredient')
 let spanAppliance       = document.querySelector('.appliance')
 let spanUstensils       = document.querySelector('.ustensil')
@@ -23,14 +22,15 @@ const btnIngredient        = document.querySelector('.btn-ingredient')
 const mainInput         = document.querySelector('.form-control');
 const bodyIngr          = document.getElementById('dropdown-body-Ingredients')
 const bodyApp          = document.getElementById('dropdown-body-Appareil')
-const bodyUstens         = document.getElementById('dropdown-body-Ustensiles')
+const bodyUstens         = document.getElementById('dropdown-body-Ustensiles');
+
 /** functions to show items of dropdown-menu */
 showAppliances(); 
 showUstensils();
 showIngredients();
 
-/**display the drop-down */
-
+/**display the dropdowns */
+/**for ingredient */
 chevronIngredient.addEventListener('click', function (){
         if(bodyIngr.style.display=="block"){
        bodyIngr.style.display="none";
@@ -38,13 +38,15 @@ chevronIngredient.addEventListener('click', function (){
        }else {bodyIngr.style.display="block";
              btnIngredient.style.width ="30vw";}
 })
+/**for appliances */
 chevronAppliance.addEventListener('click', function () {
     if(bodyApp.style.display =="block"){
         bodyApp.style.display ="none";
         btnAppliance.style.width ="12vw";
     }else{  bodyApp.style.display ="block";
             btnAppliance.style.width ="29vw";}
-})            
+})    
+/**for ustensils */        
 chevronUstensil.addEventListener('click', function () {
     if(bodyUstens.style.display == "block"){
         bodyUstens.style.display ="none";
@@ -53,19 +55,18 @@ chevronUstensil.addEventListener('click', function () {
             btnUstensil.style.width ="29vw";}
 })
 
-/**THE span when input is written */
+/**close THE span when input is written */
  
 closeButton.addEventListener('click', () => {
     textInput.style.visibility = "hidden"
 })
+/** show the span */
 /**in main search */
 mainInput.addEventListener('input', ()=>{
     inputResult.innerHTML = mainInput.value;
         textInput.style.visibility = "visible" 
     
 })
-
-
 /*in ingredient*/
 inputIngredient.addEventListener('input', ()=>{
         if(inputIngredient.value.length>2){
@@ -86,7 +87,7 @@ inputAppliance.addEventListener('input', ()=>{
         spanUstensils.innerHTML = inputUsetensils.value;
         spanUstensils.style.visibility = "visible";
 }})
-   
+ /** the functions called to show the items */  
 function showAppliances(){
     let applianceItems =[];
     for(let i = 0; i < recipes.length; i++){

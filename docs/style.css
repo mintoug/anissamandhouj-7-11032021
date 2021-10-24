@@ -80,15 +80,13 @@ li{
     border-radius: 5px;
     position: relative;
 }
-   
 .dropdown-body--blue, .dropdown-body--green, .dropdown-body--red{
     position: absolute;
     left: -40px;
     display: none;
     padding-bottom: 50px;
 }
- 
- .dropdown-body.active, #dropdown-body-Ingredients.active,
+.dropdown-body.active, #dropdown-body-Ingredients.active,
  #dropdown-body-Appareil.active, #dropdown-body-Ustensiles.active{
      display: block;
  }
@@ -172,7 +170,6 @@ width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
-
 .card-recipe{
     min-height: 25rem;
     min-width:20rem;
@@ -195,8 +192,6 @@ width: 100%;
 #card-recipe-list-ingredients{
     list-style: none;
     margin-left: -2.5rem;
-   
-    
 }
 .card-recipe-text{
  text-align: justify;

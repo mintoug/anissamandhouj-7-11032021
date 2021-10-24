@@ -1,7 +1,6 @@
 import {recipes} from './recipes.js'
 import { recipeIngredientsListTemplate, recipesListTemplate } from './main.js';
 
-
 /**variables declaration */
 const inputIngredient   = document.querySelector('.button--blue');
 const inputAppliance    =  document.querySelector('.button--green');
@@ -15,9 +14,7 @@ let ingrTags     = []
 let appTags      = []
 let ustensilTags = []
 
-
-
-/**1/ filter in the main search */
+/**1/ filter in the main search  ** in main search we search only ingredients*/
 mainInput.addEventListener ( 'input',() => { 
     if ( mainInput.value.length>2 ) {
                 mainFilter(mainInput);
@@ -71,7 +68,6 @@ inputUsetensils.addEventListener ( 'input', () => {
        }}
 )
 /**5/ filter by selected item in the dropdown */
-
 for (let elt  of item)  { 
                 let valueItem = elt.dataset.value.toLowerCase();
         elt.addEventListener('click', () => {
@@ -97,6 +93,7 @@ for (let elt  of item)  {
 }})}
 
 /** functions */
+/**function called to filter in main search or in ingredients input */
 function mainFilter ( mainInput ) {
     recipes.filter((recipe) => {  
         let hasIngredient = recipe.ingredients.some( ingredient => ingredient['ingredient'].toLowerCase() == mainInput.value.toLowerCase() );
@@ -104,14 +101,13 @@ function mainFilter ( mainInput ) {
     }
     }) 
 }
-
-
+/** function called to filter in appliances search */
 function filterAppliances () {
     recipes.filter((recipe) => {if( recipe.appliance.toLowerCase() == inputAppliance.value.toLowerCase()) {appTags.push(recipe)
     }
    })
 }
-
+/** function called to filter in ustensils search */
 function filterUstensils () {
     recipes.filter((recipe)=>{if(recipe.ustensils[0].toLowerCase() == inputUsetensils.value.toLowerCase()){ustensilTags.push(recipe)
     }
