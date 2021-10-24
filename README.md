@@ -15,5 +15,12 @@ Ce projet a pour objectif de déomposer une problématique afin de trouver une s
 ## résultats de la comparaison
 
 [lien vers jsben.ch](https://jsben.ch/zx9U3)
--------------------
 
+
+-------------------
+##Le dépot gitHub comporte 3 branches :
+* main comporte le layout du site (pas fonctioonnelle)
+* algorithme1 , c'est la solution retenu et visible sur le lien [algorithme1](https://mintoug.github.io/anissamandhouj-7-11032021/);
+* search_algorithme2 , c'est le deuxième algorithme.
+
+##[Fiche d'investigation](./photos/Fiche d'investigation)
