@@ -1,10 +1,7 @@
 import { recipes } from "./recipes.js";
-// import {showIngredients, showAppliances, showUstensils} from "./dropdown.js";
 
+/**variables*/
 let recipesList = document.getElementById('recipes-list');
-
-
-
 
 
 /*function to show the ingredient list*/

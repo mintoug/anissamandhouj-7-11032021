@@ -122,8 +122,7 @@ function filterRecipesUstensils ( inputUsetensils ) {
     }
   }
  
-
- /**search by clicking on the item in dropdown-body */
+  /**search by clicking on the item in dropdown-body */
  /** filter by selected item in the dropdown */
 
 for ( let elt  of item)  { let valueItem = elt.dataset.value.toLowerCase();

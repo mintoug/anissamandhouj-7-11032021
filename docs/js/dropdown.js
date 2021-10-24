@@ -1,6 +1,6 @@
 import { recipes } from "./recipes.js";
 
-/** declaratio of variables */
+/** declaration of variables */
 let appliances          = document.querySelector('.appliance-list');
 let ustensils           = document.querySelector('.ustensiles-list');
 let Ingredients         = document.querySelector('.ingredients-list');
@@ -9,8 +9,6 @@ let closeIngr           = document.querySelector('.close-ingredient')
 let closeApp            = document.querySelector('.close-appliance')
 let closeUstensil       = document.querySelector('.close-ustensil')
 let textInput           = document.querySelector('.text-input')
-
-let item                = document.querySelectorAll('.item')
 let spanIngredient      = document.querySelector('.ingredient')
 let spanAppliance       = document.querySelector('.appliance')
 let spanUstensils       = document.querySelector('.ustensil')
@@ -33,7 +31,8 @@ showAppliances();
 showUstensils();
 showIngredients();
 
-/**display the drop-down */
+/**to display the drop-down show and hide */
+/**for dropdown- ingredients */
 chevronIngredient.addEventListener('click', function (){
     if(bodyIngr.style.display =="block"){
    bodyIngr.style.display="none";
@@ -41,7 +40,7 @@ chevronIngredient.addEventListener('click', function (){
    }else{bodyIngr.style.display="block";
          btnIngr.style.width ="30vw";}
 })         
- 
+/**for dropdown-appliances */ 
 chevronAppliance.addEventListener('click', function () {
     if(bodyApp.style.display =="block"){
         bodyApp.style.display="none";
@@ -49,8 +48,9 @@ chevronAppliance.addEventListener('click', function () {
         }else{bodyApp.style.display="block";
               btnAppliance.style.width ="30vw";}
 })
+/**for dropdown-ustensils */
 chevronUstensil.addEventListener('click', function () {
-    if(bodyUstens.style.display =="block"){
+        if(bodyUstens.style.display =="block"){
         bodyUstens.style.display="none";
         btnUstensils.style.width ="12vw";
         }else{bodyUstens.style.display="block";
@@ -71,6 +71,7 @@ closeApp.addEventListener('click', () => {
 closeUstensil.addEventListener('click', () => {
     spanUstensils.style.visibility = "hidden";
 })
+/**show the span when input is active */
 
 /**in main search */
 mainInput.addEventListener('input', ()=>{
@@ -79,8 +80,6 @@ mainInput.addEventListener('input', ()=>{
     textInput.style.visibility = "visible" 
     }
 })
-
-
 /*in ingredient*/
 inputIngredient.addEventListener('input', ()=>{
         if(inputIngredient.value.length>2){
@@ -105,7 +104,7 @@ inputAppliance.addEventListener('input', ()=>{
         closeUstensil.style.visibility  ="visible";
     }})
      
-
+/**functions called in the top ,to show evry item in the body of dropdoawn */
 
 function showAppliances(){
     let applianceItems =[];
@@ -115,10 +114,7 @@ function showAppliances(){
     let noDoubleAppliance = applianceItems.filter((item, index)=>applianceItems.indexOf(item)===index).sort()
     for (let k=0; k<noDoubleAppliance.length; k++){
         appliances.innerHTML += `<li class="item" data-value="${noDoubleAppliance[k]}" >${noDoubleAppliance[k]}</li>`;
- 
-
-
-    }
+     }
 }
 
 function showUstensils() {
@@ -128,7 +124,8 @@ function showUstensils() {
     let noDoubleUstensils = ustensilsItem.filter((item, index)=>ustensilsItem.indexOf(item)===index).sort()
     for (let k=0; k<noDoubleUstensils.length; k++){   
     ustensils.innerHTML += `<li class="item" data-value='${noDoubleUstensils[k]}'>${noDoubleUstensils[k]}</li>`;
-}}
+    }
+}
 
 function showIngredients() {
     let ingredientArray=[]; let ingredientItem=[];
@@ -143,6 +140,5 @@ function showIngredients() {
         let noDoubleIngredient = ingredientItem.filter((item, index)=>ingredientItem.indexOf(item)===index).sort();
         for (let i = 0; i < noDoubleIngredient.length; i++) {       
              Ingredients.innerHTML += `<li class="item" data-value='${noDoubleIngredient[i]}'>${noDoubleIngredient[i]}</li>`; 
-        }
-    
     }
+}

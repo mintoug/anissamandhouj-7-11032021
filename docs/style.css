@@ -17,7 +17,6 @@ li{
     margin-right: auto;
     width: 20vw;
     margin-top: 20px;
-   
 }
 .fa-search{
     cursor:pointer;
@@ -74,7 +73,7 @@ li{
 .dropdown-body--blue, .dropdown-body--green, .dropdown-body--red{
     position: absolute;
     left: -40px;
-    display: none;
+    display:none;
     padding-bottom: 50px;
 }
 .ingredient{
@@ -190,8 +189,6 @@ width: 100%;
 #card-recipe-list-ingredients{
     list-style: none;
     margin-left: -2.5rem;
-   
-    
 }
 .card-recipe-text{
  text-align: justify;
