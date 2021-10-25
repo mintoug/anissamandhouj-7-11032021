@@ -32,7 +32,7 @@ showIngredients();
 /**display the dropdowns */
 /**for ingredient */
 chevronIngredient.addEventListener('click', function (){
-        if(bodyIngr.style.display=="block"){
+        if(bodyIngr.style.display=="block" || bodyUstens.style.display =="block" || bodyIngr.style.display =="block"){
        bodyIngr.style.display="none";
        btnIngredient.style.width ="12vw";
        }else {bodyIngr.style.display="block";
@@ -40,7 +40,7 @@ chevronIngredient.addEventListener('click', function (){
 })
 /**for appliances */
 chevronAppliance.addEventListener('click', function () {
-    if(bodyApp.style.display =="block"){
+    if(bodyApp.style.display =="block" || bodyIngr.style.display=="block" || bodyUstens.style.display =="block"){
         bodyApp.style.display ="none";
         btnAppliance.style.width ="12vw";
     }else{  bodyApp.style.display ="block";
@@ -48,7 +48,7 @@ chevronAppliance.addEventListener('click', function () {
 })    
 /**for ustensils */        
 chevronUstensil.addEventListener('click', function () {
-    if(bodyUstens.style.display == "block"){
+    if(bodyUstens.style.display == "block" || bodyUstens.style.display =="block" || bodyIngr.style.display =="block"){
         bodyUstens.style.display ="none";
         btnUstensil.style.width ="12vw";
     }else{  bodyUstens.style.display ="block";
