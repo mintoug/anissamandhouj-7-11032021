@@ -34,7 +34,7 @@ showIngredients();
 /**to display the drop-down show and hide */
 /**for dropdown- ingredients */
 chevronIngredient.addEventListener('click', function (){
-    if(bodyIngr.style.display =="block"){
+    if(bodyIngr.style.display =="block" || bodyApp.style.display =="block" || bodyUstens.style.display =="block"){
    bodyIngr.style.display="none";
    btnIngr.style.width ="12vw";
    }else{bodyIngr.style.display="block";
@@ -42,7 +42,7 @@ chevronIngredient.addEventListener('click', function (){
 })         
 /**for dropdown-appliances */ 
 chevronAppliance.addEventListener('click', function () {
-    if(bodyApp.style.display =="block"){
+    if(bodyApp.style.display =="block" || bodyUstens.style.display =="block" || bodyIngr.style.display =="block"){
         bodyApp.style.display="none";
         btnAppliance.style.width ="12vw";
         }else{bodyApp.style.display="block";
@@ -50,7 +50,7 @@ chevronAppliance.addEventListener('click', function () {
 })
 /**for dropdown-ustensils */
 chevronUstensil.addEventListener('click', function () {
-        if(bodyUstens.style.display =="block"){
+        if(bodyUstens.style.display =="block" || bodyIngr.style.display =="block" || bodyApp.style.display =="block"){
         bodyUstens.style.display="none";
         btnUstensils.style.width ="12vw";
         }else{bodyUstens.style.display="block";
