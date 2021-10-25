@@ -21,7 +21,6 @@ const inputIngredient   = document.querySelector('.button--blue');
 const inputAppliance    =  document.querySelector('.button--green');
 const inputUsetensils   = document.querySelector('.button--red');
 const mainInput         = document.querySelector('.form-control');
-const menuD             = document.querySelector('.menu-d')
 const btnAppliance        = document.querySelector('.btn-appliance')
 const btnUstensil        = document.querySelector('.btn-ustensils')
 const btnIngredient        = document.querySelector('.btn-ingredient')
@@ -35,22 +34,24 @@ showIngredients();
 
 /**display the drop-down */
 chevronIngredient.addEventListener('click', function (){
-    if(bodyIngr.style.display=="block"){
+    if(bodyIngr.style.display=="block" || bodyApp.style.display =="block"|| bodyUstens.style.display =="block" ){
    bodyIngr.style.display="none";
    btnIngredient.style.width ="12vw";
    }else{bodyIngr.style.display="block";
-         btnIngredient.style.width ="30vw";}
+         btnIngredient.style.width ="30vw";
+         
+    }
    
 })
 chevronAppliance.addEventListener('click', function () {
-    if(bodyApp.style.display =="block"){
+    if(bodyApp.style.display =="block"  || bodyUstens.style.display == "block" || bodyIngr.style.display=="block" ){
         bodyApp.style.display ="none";
         btnAppliance.style.width ="12vw";
     }else{  bodyApp.style.display ="block";
             btnAppliance.style.width ="29vw";}
 })
 chevronUstensil.addEventListener('click', function () {
-    if(bodyUstens.style.display == "block"){
+    if(bodyUstens.style.display == "block" || bodyIngr.style.display=="block" || bodyApp.style.display =="block"){
         bodyUstens.style.display ="none";
         btnUstensil.style.width ="12vw";
     }else{  bodyUstens.style.display ="block";
