@@ -4,7 +4,7 @@
 Ce projet a pour objectif de déomposer une problématique afin de trouver une solution algorithmique pertinente et efficace. Pour cela, le projet se focalise sur la fonctionnalité de recherche qui devra donc être la plus performante possible. 
  
 
-##Étapes conseillées
+## Étapes conseillées
 
 1. Interface :  réaliser l’interface de la page web (bootstrap recommandé)
 2. Dans un deuxième temps, ou en parallèle, travailler sur la logique de recherche et le document d’investigation de fonctionnalité.
@@ -14,13 +14,13 @@ Ce projet a pour objectif de déomposer une problématique afin de trouver une s
 
 ## résultats de la comparaison
 
-[lien vers jsben.ch](https://jsben.ch/zx9U3)
+### [lien vers jsben.ch](https://jsben.ch/zx9U3)
 
 
 -------------------
-##Le dépot gitHub comporte 3 branches :
+## Le dépot gitHub comporte 3 branches :
 * main comporte le layout du site (pas fonctioonnelle)
 * algorithme1 , c'est la solution retenu et visible sur le lien [algorithme1](https://mintoug.github.io/anissamandhouj-7-11032021/);
 * search_algorithme2 , c'est le deuxième algorithme.
 
-##![Fiche d'investigation](./photos/Fiche d'investigation)
+## [Fiche d'investigation](./photos/Fiche d'investigation)
