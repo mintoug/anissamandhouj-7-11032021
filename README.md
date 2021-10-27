@@ -12,8 +12,6 @@ Ce projet a pour objectif de déomposer une problématique afin de trouver une s
 4. répèter la procédure pour le 2e algorithme.
 5. Comparaison des résultats des algorithmes via un outil de benchmark comme jsben.ch, jsbench.me, jsperf.com.
 
-## résultats de la comparaison
-
 
 
 
